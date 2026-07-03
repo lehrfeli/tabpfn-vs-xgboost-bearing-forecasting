@@ -73,9 +73,20 @@ or imported as a module; `train.py` orchestrates the full run.
 - A 250-fit `RandomizedSearchCV` walk-forward search meaningfully improved
   XGBoost's correlation (0.36 → 0.56) but still fell well short of TabPFN's
   out-of-the-box performance.
+- **Neither model predicted the actual point of failure** (the terminal
+  spike in RMS as the bearing gave out) — both underestimated its
+  magnitude. TabPFN still handled it comparatively better than either
+  XGBoost variant, tracking closer to the true spike instead of missing it
+  as badly.
+- TabPFN's edge was most consistent on the short-term fluctuations in the
+  RMS signal throughout the test period, not just the overall degradation
+  trend — XGBoost's predictions were noticeably smoother/flatter and missed
+  most of this local variation.
 - All three models saw an identical feature set (raw channel statistics +
   calendar features + FFT seasonal features), so the gap reflects the
   models themselves, not feature availability.
+
+![Model comparison: RMSE, MAE, and correlation across XGBoost, tuned XGBoost, and TabPFN](assets/model_comparison.png)
 
 ## Project structure
 
