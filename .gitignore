@@ -1,0 +1,9 @@
+# Raw dataset (too large for the repo - see data/README.md)
+data/NASA_bearing_datasest/
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+.venv/
+venv/
