@@ -100,7 +100,7 @@ pip install -r requirements.txt
 Download the dataset per [data/README.md](data/README.md), then:
 
 ```bash
-export TABPFN_ACCESS_TOKEN=your_token_here   # see https://github.com/PriorLabs/tabpfn-client
+export TABPFN_ACCESS_TOKEN=your_token_here   # get a token at https://ux.priorlabs.ai
 python train.py
 ```
 
